@@ -1,0 +1,9 @@
+<%= @replay.errors.inspect %>
+<% simple_form_for @replay do |form| %>
+	<%= form.input :title %>
+	<%= form.input :game_played_at %>
+	<%= form.input :game_type %>
+	<%= form.association :map %>
+	<%= form.input :winning_team, :as => :select, :collection => team_collection %>
+	<%= form.submit %>
+<% end %>

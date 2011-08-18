@@ -1,0 +1,8 @@
+<% simple_form_for([@replay, @player]) do |f| %>
+	<%= f.input :name %>
+	<%= f.input :team, :as => :select, :collection => team_collection %>
+	<%= f.input :race_id, :as => :select, :collection => race_collection %>
+	
+	<%= f.submit "Add player" %>
+	<%= link_to "Back to replay", @replay%>
+<% end %>

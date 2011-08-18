@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  map_id: 1
+  game_type: 1
+  game_played_at: 2011-08-18 11:48:37
+  winning_team: false
+
+two:
+  title: MyString
+  map_id: 1
+  game_type: 1
+  game_played_at: 2011-08-18 11:48:37
+  winning_team: false

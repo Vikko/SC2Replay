@@ -1,0 +1,18 @@
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Race</th>
+		<th>Team</th>
+		<th>Actions</th>
+	</tr>
+
+	<% replay.players.each do |player| %>
+	<% next if player.new_record? %>
+	<tr>
+		<td><%= player.name %></td>
+		<td><%= player.race_name %></td>
+		<td><%= player.team_name %></td>
+		<td><%= link_to "Destroy", replay_player_path(replay, player), :method => :delete %>
+	</tr>
+	<% end %>
+</table>

@@ -1,0 +1,14 @@
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Game Type</th>
+		<th>Game played</th>
+	</tr>
+	<% @replays.each do |replay|%>
+		<tr> 
+			<td><%= link_to replay.title, replay %></td>
+			<td><%= Replay::GAME_TYPES[replay.game_type] %></td>
+			<td><%= replay.game_played_at %></td>
+		</tr>
+	<% end %>
+</table>

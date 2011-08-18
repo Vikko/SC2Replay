@@ -1,0 +1,7 @@
+<H1><%= @replay.title %></H1>
+
+<h2>Game information</h2>
+<p>Game played at: <%= @replay.game_played_at %></p>
+
+<%= render :partial => "players", :locals => {:replay => @replay} %>
+<%= link_to "Add players", new_replay_player_path(@replay)%>
