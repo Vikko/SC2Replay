@@ -13,6 +13,10 @@ class PlayersController < ApplicationController
       render :edit
     end
   end
+  
+  def show
+    # BLABLA
+  end
 
   def destroy
     @player = Player.find(params[:id])
