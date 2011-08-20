@@ -9,6 +9,6 @@ Map.create :name => "Dessert", :max_players => 2
 Map.create :name => "Ocean", :max_players => 3
 Map.create :name => "Space", :max_players => 1
 
-Replay.create :title => "Maran en Vikko zijn pro bezig", :map_id => 1, :winning_team => true, :game_type => 2
+Replay.create :title => "Maran en Vikko zijn pro bezig", :map_id => 1, :game_played_at => Date.today, :winning_team => true, :game_type => 2
 
 User.create(:email => "vikko@awesomesc2.com", :password => "ilovesc2", :password_confirmation => "ilovesc2")

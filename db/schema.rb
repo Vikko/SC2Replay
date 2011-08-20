@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20110818095010) do
   create_table "players", :force => true do |t|
     t.string   "name"
     t.boolean  "team"
-    t.integer  "race_id"
+    t.integer  "race"
     t.integer  "replay_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20110818095010) do
     t.integer  "map_id"
     t.integer  "game_type"
     t.datetime "game_played_at"
+    t.string   "replay"
     t.boolean  "winning_team"
     t.datetime "created_at"
     t.datetime "updated_at"

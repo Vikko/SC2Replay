@@ -3,6 +3,9 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.9'
 gem 'devise'
 gem 'simple_form'
+gem 'carrierwave'
+gem 'mpq'
+
 group :test,:development do
 	gem 'fabrication'
 	gem 'rspec-rails'

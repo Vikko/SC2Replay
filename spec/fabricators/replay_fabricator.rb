@@ -3,4 +3,5 @@ Fabricator :replay do
   map_id {1}
   game_type{2}
   winning_team{true}
+  replay{"/public/uploads/replay/replay/1/Noobplay.SC2ReplayNoobplay.SC2Replay"}
 end 

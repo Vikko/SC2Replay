@@ -3,7 +3,7 @@ class CreatePlayers < ActiveRecord::Migration
     create_table :players do |t|
       t.string :name
       t.boolean :team
-      t.integer :race_id
+      t.integer :race
       t.integer :replay_id
 
       t.timestamps

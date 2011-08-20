@@ -1,4 +1,6 @@
 class Replay < ActiveRecord::Base
+  mount_uploader :replay, ReplayUploader
+  
   GAME_TYPES = {
     1 => "1vs1",
     2 => "2vs2",
@@ -10,4 +12,8 @@ class Replay < ActiveRecord::Base
   
   belongs_to :map
   has_many :players
+  
+  def replay=(obj)
+    super(obj)
+  end
 end

@@ -7,7 +7,7 @@ describe Replay do
   
   context "After object creation" do
     subject { Fabricate(:replay) }
-    
+   
     it {should be_valid}
   end
 end

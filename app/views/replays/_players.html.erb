@@ -9,7 +9,11 @@
 	<% replay.players.each do |player| %>
 	<% next if player.new_record? %>
 	<tr>
+		<% if player.is_winner? %>
+		<td><b><%= player.name %></b></td>
+		<% else %>
 		<td><%= player.name %></td>
+		<% end %>
 		<td><%= player.race_name %></td>
 		<td><%= player.team_name %></td>
 		<td><%= link_to "Destroy", replay_player_path(replay, player), :method => :delete %>

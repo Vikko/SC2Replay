@@ -3,12 +3,17 @@
 		<th>Title</th>
 		<th>Game Type</th>
 		<th>Game played</th>
+		<th>Actions</th>
 	</tr>
 	<% @replays.each do |replay|%>
 		<tr> 
 			<td><%= link_to replay.title, replay %></td>
 			<td><%= Replay::GAME_TYPES[replay.game_type] %></td>
-			<td><%= replay.game_played_at %></td>
+			<td><%= l(replay.game_played_at, :format => :short) %></td>
+			<td><%= link_to "Download", replay.replay.url%>
 		</tr>
 	<% end %>
+	<tr>
+		<td><%= link_to "Add new replay", new_replay_path(@replay) %>
+	</tr>
 </table>
