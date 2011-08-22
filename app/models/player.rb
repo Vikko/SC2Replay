@@ -1,5 +1,6 @@
 class Player < ActiveRecord::Base  
   RACES = {
+    0 => "Random",
     1 => "Terran",
     2 => "Zerg", 
     3 => "Protoss"

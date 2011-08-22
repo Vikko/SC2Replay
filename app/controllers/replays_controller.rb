@@ -39,16 +39,15 @@ class ReplaysController < ApplicationController
       else
         player.team = 1
       end
-      if p[:race] == :terran
+      case p[:race]
+      when :terran
         player.race = 1
-      else
-        if p[:race] == :zerg
-          player.race = 2
-        else 
-          if p[:race] = :protoss
-            player.race = 3
-          end
-        end
+      when :zerg
+        player.race = 2
+      when :protoss
+        player.race = 3    
+      else 
+        player.race = 0
       end
     end
     
