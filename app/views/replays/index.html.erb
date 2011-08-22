@@ -11,6 +11,7 @@
 			<td><%= Replay::GAME_TYPES[replay.game_type] %></td>
 			<td><%= l(replay.game_played_at, :format => :short) %></td>
 			<td><%= link_to "Download", replay.replay.url%>
+			<%= link_to "Delete" , replay_path(replay), :method => :delete %></td>
 		</tr>
 	<% end %>
 	<tr>

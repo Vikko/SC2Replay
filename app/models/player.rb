@@ -11,7 +11,7 @@ class Player < ActiveRecord::Base
   }
 
   belongs_to :replay
-  validates :name, :race, :team, :presence => true
+  #validates :name, :race, :team, :presence => true
 
 
   def race_name

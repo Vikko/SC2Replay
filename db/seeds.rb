@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
-Map.create :name => "Dessert", :max_players => 2
+
 Map.create :name => "Ocean", :max_players => 3
 Map.create :name => "Space", :max_players => 1
 
