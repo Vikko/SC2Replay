@@ -9,7 +9,7 @@ class Replay < ActiveRecord::Base
     4 => "4vs4"
     
   }
-  #validates :game_type, :map_id, :title, :presence => true
+  validates :game_type, :map_id, :title, :presence => true
   
   belongs_to :map
   has_many :players
