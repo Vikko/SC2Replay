@@ -6,4 +6,8 @@ module ApplicationHelper
   def team_collection
      Player::TEAMS.collect{|x, v| [v, x]}
   end
+  
+  def type_collection
+     Replay::GAME_TYPES.collect{|x, v| [v, x]}
+  end
 end

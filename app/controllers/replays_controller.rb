@@ -11,6 +11,10 @@ class ReplaysController < ApplicationController
     @replay = Replay.find(params[:id])
   end
   
+  def edit
+    @replay = Replay.find(params[:id])
+  end
+  
   def destroy
     @replay = Replay.find(params[:id])
     @replay.destroy
@@ -54,6 +58,10 @@ class ReplaysController < ApplicationController
     #add meta data
     @replay.game_played_at = replayfile.start_date
     @replay.game_type = replayfile.game_type
+    
+    #find map
+    map = Map.find_or_create_by_name(replayfile.map_name)
+    @replay.map_id = map.id
     
     if @replay.save
       redirect_to replay_path(@replay), :notice => "Replay created, add players now"
