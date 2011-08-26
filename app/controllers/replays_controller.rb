@@ -28,30 +28,32 @@ class ReplaysController < ApplicationController
     
     #add players
     firstteam = "none"
-    replayfile.players.each do |p| #p name, outcome, type, race, color
-      player = @replay.players.build
-      if p[:type] == :human
-        player.name = p[:name]
-      else 
-        player.name = "Computer"
-      end
-      if firstteam == "none"
-        firstteam = p[:outcome]
-      end
-      if p[:outcome] == firstteam
-        player.team = 0
-      else
-        player.team = 1
-      end
-      case p[:race]
-      when :terran
-        player.race = 1
-      when :zerg
-        player.race = 2
-      when :protoss
-        player.race = 3    
-      else 
-        player.race = 0
+    if replayfile.players != nil
+      replayfile.players.each do |p| #p name, outcome, type, race, color
+        player = @replay.players.build
+        if p[:type] == :human
+          player.name = p[:name]
+        else 
+          player.name = "Computer"
+        end
+        if firstteam == "none"
+          firstteam = p[:outcome]
+        end
+        if p[:outcome] == firstteam
+          player.team = 0
+        else
+          player.team = 1
+        end
+        case p[:race]
+        when :terran
+          player.race = 1  
+        when :zerg
+          player.race = 2
+        when :protoss
+          player.race = 3    
+        else 
+          player.race = 0
+        end
       end
     end
     
