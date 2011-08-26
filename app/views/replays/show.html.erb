@@ -1,11 +1,17 @@
-<H1><%= @replay.title %></H1>
+<table>
+	<tr>
+		<td><H1><%= @replay.title %></H1>
 
-<h2>Game information</h2>
-<p>Game played at: <%= @replay.game_played_at %></p>
-<p>Map: <%= @replay.map_name%>
-
-<p><%= link_to "Download", @replay.replay.url %> <%= link_to "Return to index", root_path %></p>
-
-<%= render :partial => "players", :locals => {:replay => @replay} %>
-<%= link_to "Add players", new_replay_player_path(@replay) %>
-<%= link_to "Edit Replay", edit_replay_path(@replay) %>
+			<h2>Game information</h2>
+			<p>Game played at: <%= @replay.game_played_at %></p>
+			<p>Map: <%= @replay.map_name%>
+			<p><%= link_to "Download", @replay.replay.url %> <%= link_to "Return to index", root_path %></p>
+			<%= render :partial => "players", :locals => {:replay => @replay} %>
+			<%= link_to "Add players", new_replay_player_path(@replay) %>
+			<%= link_to "Edit Replay", edit_replay_path(@replay) %>
+		</td>
+		<td>
+			Image here
+		</td>
+	</tr>
+</table>

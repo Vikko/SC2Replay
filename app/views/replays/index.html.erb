@@ -1,20 +1,27 @@
-<table>
-	<tr>
-		<th>Title</th>
-		<th>Game Type</th>
-		<th>Game played</th>
-		<th>Actions</th>
-	</tr>
-	<% @replays.each do |replay|%>
-		<tr> 
-			<td><%= link_to replay.title, replay %></td>
-			<td><%= Replay::GAME_TYPES[replay.game_type] %></td>
-			<td><%= l(replay.game_played_at, :format => :short) %></td>
-			<td><%= link_to "Download", replay.replay.url%>
-			<%= link_to "Delete" , replay_path(replay), :method => :delete %></td>
-		</tr>
-	<% end %>
-	<tr>
-		<td><%= link_to "Add new replay", new_replay_path(@replay) %>
-	</tr>
-</table>
+<% @replays.each do |replay|%>
+	<div class="post">
+    	<h1><%= link_to replay.title, replay %></h1>
+      	<div class="post_body">
+			<p>
+        	<table>
+				<tr>
+					<th colspan='2' align='center'>Map</th>
+					<th>Game Type</th>
+					<th colspan='2' align='center'>Actions</th>
+				</tr>
+				<tr>
+					<td><%= link_to "Image TBD", replay, :class => 'idx_map_image' %></td>
+					<td class='idx_map_name'><%= replay.map[:name] %></td>
+					<td class='idx_type'><%= Replay::GAME_TYPES[replay.game_type] %></td>
+					<td class='idx_type'><%= link_to "Download", replay.replay.url%></td>
+					<td><%= link_to "Delete" , replay_path(replay), :method => :delete %></td>
+				</tr>
+			</table>
+			</p>
+        </div>
+      	<div class="postedby">Posted by: TBD</div><div class="timestamp"><%= l(replay.game_played_at, :format => :short) %>
+		</div>
+    </div>
+	
+		
+<% end %>
