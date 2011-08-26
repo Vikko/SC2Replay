@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(:version => 20110818095010) do
 
   create_table "replays", :force => true do |t|
     t.string   "title"
-    t.string   "uploader"
     t.integer  "map_id"
     t.integer  "game_type"
     t.datetime "game_played_at"
+    t.string   "uploader"
     t.string   "replay"
     t.boolean  "winning_team"
     t.datetime "created_at"
