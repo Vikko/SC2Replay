@@ -23,6 +23,9 @@ class ReplaysController < ApplicationController
   
   def create
     @replay = Replay.new(params[:replay])
+    
+    @replay.uploader = current_user.email
+
     require 'replay_file'
     replayfile = MPQ::SC2ReplayFile.new(File.open(@replay.replay.current_path))
     
