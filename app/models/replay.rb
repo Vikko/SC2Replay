@@ -78,4 +78,9 @@ class Replay < ActiveRecord::Base
   def map_name
     return Map.find(self.map_id)[:name]
   end
+  
+  def self.search(search)
+    search_condition = "%" + search + "%"
+    find(:all, :conditions => ['title LIKE ?', search_condition])
+  end
 end

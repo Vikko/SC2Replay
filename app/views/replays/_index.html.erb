@@ -1,0 +1,25 @@
+<% @replays.each do |replay|%>
+	<div class="post">
+    	<h1><table width='100%'><tr><td><div align='left'><%= link_to replay.title, replay%></div></td><td><div align='right'><%= link_to replay.id, replay%></div></td></tr></table></h1>
+      	<div class="post_body">
+			<p>
+        	<table>
+				<tr>
+					<th colspan='2' align='center'>Map</th>
+					<th>Game Type</th>
+					<th colspan='2' align='center'>Actions</th>
+				</tr>
+				<tr>
+					<td><%= link_to "Image TBD", replay, :class => 'idx_map_image' %></td>
+					<td class='idx_map_name'><%= replay.map[:name] %></td>
+					<td class='idx_type'><%= Replay::GAME_TYPES[replay.game_type] %></td>
+					<td class='idx_type'><%= link_to "Download", replay.replay.url%></td>
+					<td><%= link_to "Delete" , replay_path(replay), :method => :delete %></td>
+				</tr>
+			</table>
+			</p>
+        </div>
+      	<div class="postedby">Posted by: <%= replay.uploader %></div><div class="timestamp"><%= l(replay.game_played_at, :format => :short) %>
+		</div>
+    </div>
+<% end %>

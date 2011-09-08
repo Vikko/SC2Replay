@@ -32,4 +32,9 @@ class ReplaysController < ApplicationController
       render :edit
     end
   end
+  
+  def search
+    render :partial => "search" if params[:search].nil?
+    @replays = Replay.search(params[:search])
+  end
 end
