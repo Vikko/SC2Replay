@@ -62,5 +62,5 @@ Sc2replay::Application.routes.draw do
   end
   resources :users
   root :to => "replays#index"
-  match "search" => "replays#search"
+  match "search" => "replays#search", :as => "search"
 end

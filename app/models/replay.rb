@@ -80,6 +80,9 @@ class Replay < ActiveRecord::Base
   end
   
   def self.search(search)
+    if search.nil?
+      search = ""
+    end 
     search_condition = "%" + search + "%"
     find(:all, :conditions => ['title LIKE ?', search_condition])
   end
