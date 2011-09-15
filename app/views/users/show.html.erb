@@ -1,9 +1,10 @@
 <table>
 	<tr>
-		<td><H1><%=link_to @user.email, 'mailto:'+@user.email %></H1>
+		<td><H1><%= @user.username %></H1>
 
 			<h2>User information</h2>
-			<p>TBD</p>
+			<p>Email: <%= link_to @user.email, 'mailto:'+@user.email %></p>
+			
 		</td>
 		<td>
 			Picture here

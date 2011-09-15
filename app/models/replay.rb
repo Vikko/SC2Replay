@@ -1,4 +1,5 @@
 class Replay < ActiveRecord::Base
+  belongs_to :user
   mount_uploader :replay, ReplayUploader
   
   GAME_TYPES = {
@@ -9,7 +10,7 @@ class Replay < ActiveRecord::Base
     4 => "4vs4"
     
   }
-  validates :uploader, :game_type, :map_id, :title, :presence => true
+  validates :game_type, :map_id, :title, :presence => true
   
   belongs_to :map
   has_many :players

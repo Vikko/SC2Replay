@@ -22,9 +22,7 @@ class ReplaysController < ApplicationController
   end
   
   def create
-    @replay = Replay.new(params[:replay])
-    
-    @replay.uploader = current_user.email
+    @replay = current_user.replays.build(params[:replay])
     
     if @replay.save
       redirect_to replay_path(@replay), :notice => "Replay created, add players now"

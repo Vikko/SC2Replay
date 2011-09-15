@@ -8,6 +8,7 @@ class CreateReplays < ActiveRecord::Migration
       t.string :uploader
       t.string :replay
       t.boolean :winning_team
+      t.integer :user_id
 
       t.timestamps
     end
