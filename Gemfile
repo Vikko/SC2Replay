@@ -5,6 +5,7 @@ gem 'devise'
 gem 'simple_form'
 gem 'carrierwave'
 gem 'mpq'
+gem 'will_paginate'
 
 group :test,:development do
 	gem 'fabrication'

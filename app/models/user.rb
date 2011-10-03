@@ -12,4 +12,5 @@ class User < ActiveRecord::Base
   def search
     find(:all, :conditions => ['username LIKE ?', search])
   end
+  
 end

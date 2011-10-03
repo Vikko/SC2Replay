@@ -1,6 +1,6 @@
 class ReplaysController < ApplicationController
   def index
-    @replays = Replay.all
+    @replays = Replay.paginate(:page => params[:page], :per_page => 8)
   end
   
   def new
